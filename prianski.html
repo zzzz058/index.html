@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday, Baimski</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#2A0001;
+font-family:'Inter',sans-serif;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.card{
+width:95%;
+max-width:900px;
+height:85vh;
+background:#f2e6d3;
+border-radius:24px;
+overflow:hidden;
+position:relative;
+box-shadow:0 25px 70px rgba(0,0,0,.5);
+}
+
+.page{
+display:none;
+height:100%;
+padding:60px;
+overflow-y:auto;
+}
+
+.page.active{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+h1,h2{
+font-family:'Cormorant Garamond',serif;
+color:#2A0001;
+}
+
+h1{
+font-size:5rem;
+}
+
+h2{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.line{
+width:120px;
+height:1px;
+background:#2A0001;
+opacity:.3;
+margin:20px 0;
+}
+
+.subtitle{
+opacity:.8;
+}
+
+.text{
+max-width:650px;
+line-height:1.9;
+color:#341010;
+}
+
+.long{
+text-align:left;
+max-width:700px;
+}
+
+.music{
+margin-top:20px;
+color:#2A0001;
+text-decoration:none;
+border-bottom:1px solid #2A0001;
+}
+
+.buttons{
+position:absolute;
+bottom:20px;
+left:0;
+right:0;
+display:flex;
+justify-content:center;
+gap:10px;
+}
+
+button{
+background:#2A0001;
+color:white;
+border:none;
+padding:12px 24px;
+border-radius:999px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.9;
+}
+
+.year{
+position:absolute;
+top:20px;
+right:25px;
+opacity:.5;
+}
+
+@media(max-width:768px){
+
+.page{
+padding:35px;
+}
+
+h1{
+font-size:3.5rem;
+}
+
+h2{
+font-size:2.2rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="year">2026</div>
+
+<!-- PAGE 1 -->
+
+<div class="page active">
+
+<h1>Brian</h1>
+
+<div class="line"></div>
+
+<p class="subtitle">
+happy birthday broski
+</p>
+
+<a class="music"
+href="https://open.spotify.com/search/ribs%20lorde"
+target="_blank">
+♫ play the soundtrack </a>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page">
+
+<h2>lu tau ga</h2>
+
+<p class="text">
+
+sbnrnya ye i wasn't really sure what to write here sih but since it's your birthday, 
+i figured making an entire website was slightly cooler than sending 
+a regular birthday message (biasalah gue kan artist gt, jadi hrs buat yg anjay jg, ups) 
+
+   dan yap, here we are.
+
+</p>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page">
+
+<h2>a message for baimski cihuy</h2>
+
+<p class="text long">
+
+we've only known each other since the beginning of high school, 
+but somehow it's weird knowing that next year we probably won't even be in 
+the same class anymore because of the rolling system jir when i first came into high school,
+ i never would've guessed that we'd end up becoming friends coy, cz u look stecu stecu (first impression gue) 
+another year has passed, and somehow it feels like time keeps moving faster than we expect jirz.
+your efforts, your growth, the way you keep moving forward even when things are difficult—it all matters. 
+ hope this year gives you opportunities that excite you, moments that make you laugh until your stomach hurts, 
+and memories you'll look back on fondly years from now. Most of all, i hope this year treats you well, and that you find happiness in the little things. 
+i hope you stay healthy, do well in everything you're working towards, and find a lot of reasons to smile sapri!
+ I hope you continue becoming the person you want to be, while still appreciating the person you already are today. 
+ thank you for all the random conversations, the inside jokes, the laughs, and for making school a little less boring, baimski
+
+</p>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page">
+
+<h2>one last thing</h2>
+
+<div class="line"></div>
+
+<p class="text">
+
+one again ye, big thanks or all the laughs, all the random conversations, 
+and all the memories from class X-H. once again happy birthday, 
+our class president! see you around! even if we're not in the same classroom anymore!!
+  —zilvaselebsmandaanjaymabarcihuy😜
+
+</p>
+
+</div>
+
+<div class="buttons">
+<button onclick="prevPage()">Previous</button>
+<button onclick="nextPage()">Next</button>
+</div>
+
+</div>
+
+<script>
+
+let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+
+function showPage(index){
+pages.forEach(page=>{
+page.classList.remove('active');
+});
+pages[index].classList.add('active');
+}
+
+function nextPage(){
+if(currentPage < pages.length-1){
+currentPage++;
+showPage(currentPage);
+}
+}
+
+function prevPage(){
+if(currentPage > 0){
+currentPage--;
+showPage(currentPage);
+}
+}
+
+</script>
+
+</body>
+</html>
